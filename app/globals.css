@@ -1,0 +1,42 @@
+body {
+
+  background-color: #4a2060;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.dis {
+  position: relative;
+  overflow: hidden;
+}
+.svg{
+  position: absolute;
+  z-index: -99;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.mainhead {
+  text-transform: uppercase !important;
+}
+
+.preloader{
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-transform: uppercase;
+  color: #EBD3F8;
+}
+
+.preloader h1{
+  font-size: 30px;
+  margin: 0;
+}
+
+.preloader p{
+  font-size: 30px;
+  margin: 0;
+}
