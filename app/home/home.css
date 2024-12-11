@@ -1,28 +1,39 @@
 .textss {
   width: fit-content;
-  border: 1px solid black;
-  box-shadow: 3px 0px 5px 0px;
-  padding: 30px !important;
-  background-color: #ebd3f8;
+  border: 3px solid rgb(50, 106, 162);
+  padding: 0px 30px 0px 30px !important;
+  background-color: #ffffff;
   color: #000000 !important;
+  margin-top: 10px;
+  font-size: 20px;
+  font-family: c2;
 }
 
-.mainhead {
-  text-transform: uppercase !important;
-  text-align: center;
-  font-weight: bolder;
-  line-height: 0px;
-  font-weight: 900;
-  font-size: clamp(10px, 8vw, 50px);
+.s{
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: c3;
+  border-bottom: 5px solid black;
+}
+.s h2{
   text-transform: uppercase;
-  color: #ebd3f8;
-}
+  font-size: clamp(20px, 4vw, 30px);
+  text-decoration: none !important;
+  color: black !important; /* Minimum 20px, scales with viewport, max 50px */
 
+}
+.mainhead {
+  font-family: c1;
+  font-size: clamp(20px, 4vw, 30px); /* Minimum 20px, scales with viewport, max 50px */
+  margin-left: 20px;
+}
 .maintext {
-  padding: 30px;
-  background-color: #2e073f;
-  height: 70vh;
-  border-radius: 30px;
+  padding: 20px;
+  background-color: #ffffff;
+  height: 65vh;
+  border-radius: 50px;
   overflow-y: scroll;
   scrollbar-width: thin;
   scrollbar-color: rgb(0, 0, 0) #fff1db00;
@@ -35,12 +46,13 @@
 .you {
   display: flex;
   justify-content: flex-end;
+
 }
 
 .character {
-  color: #ebd3f8;
-  text-transform: uppercase;
+  font-family: c3;
   margin-left: 7px;
+  margin-bottom: 10px;
   font-size: 20px;
 }
 
@@ -77,8 +89,98 @@
   }
 }
 
-@media (max-width: 1000px) {
-  .mainhead {
-    margin-bottom: 50px;
+
+
+/* From Uiverse.io by vinodjangid07 */
+.messageBox {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  padding: 0 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 50px;
+  border: 5px solid rgb(63, 63, 63);
+}
+.messageBox:focus-within {
+  border: 4px solid rgb(110, 110, 110);
+}
+.fileUploadWrapper {
+  width: fit-content;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.tooltip {
+  position: absolute;
+  top: -40px;
+  display: none;
+  opacity: 0;
+  color: white;
+  font-size: 10px;
+  text-wrap: nowrap;
+  background-color: #000;
+  padding: 6px 10px;
+  border: 5px solid #000000;
+  border-radius: 5px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.596);
+  transition: all 0.3s;
+}
+#messageInput::placeholder {
+  font-family: c1 !important;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#messageInput {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding-left: 10px;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  font-family: c1;
+}
+#messageInput:focus ~ #sendButton svg path,
+#messageInput:valid ~ #sendButton svg path {
+  fill: #3c3c3c;
+  stroke: white;
+}
+
+#sendButton {
+  width: fit-content;
+  height: 100%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+#sendButton svg {
+  height: 38px;
+  transition: all 0.3s;
+}
+#sendButton svg path {
+  transition: all 0.3s;
+}
+#sendButton:hover svg path {
+  fill: #3c3c3c;
+  padding: 10px;
+}
+
+@media (max-width:100px) {
+  .maintext{
+    height: 70px !important;
   }
 }

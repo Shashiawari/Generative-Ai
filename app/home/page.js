@@ -4,6 +4,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { marked } from "marked";
 import "./home.css";
+import Link from "next/link";
 // Custom renderer for marked to handle code blocks with syntax highlighting
 const renderer = new marked.Renderer();
 renderer.code = (code, language) => {
@@ -61,9 +62,8 @@ export default function ChatPage() {
       <div
         className="textss"
         style={{
-          padding: "10px",
-          borderRadius: "8px",
-
+          padding: "0px",
+          borderRadius: "5px",
           wordWrap: "break-word",
         }}
         dangerouslySetInnerHTML={{ __html: htmlText }} // Use dangerouslySetInnerHTML to render the formatted HTML
@@ -73,8 +73,10 @@ export default function ChatPage() {
 
   return (
     <div style={{ padding: "20px" }} className="mm">
-
-      <h1 className="mainhead">Generative AI Chat</h1>
+      <div className="s">
+        <h1 className="mainhead">Generative AI Chat</h1>
+        <Link href={"https://www.npmjs.com/package/@google/generative-ai"}><h2> Docs </h2></Link>
+      </div>
       <div className="maintext">
         {messages.map((message, index) => (
           <div
@@ -102,21 +104,35 @@ export default function ChatPage() {
         style={{ marginTop: "20px" }}
         className="frm"
       >
-        <input
-          type="text"
-          className="input"
-          value={prompt}
-          onChange={(e) => setPrompt(e.target.value)}
-          placeholder="Enter your message"
-          style={{ width: "300px", padding: "10px" }}
-        />
-        <button
-          className="btn"
-          type="submit"
-          style={{ marginLeft: "10px", padding: "10px" }}
-        >
-          Send
-        </button>
+        <div className="messageBox">
+          <input
+            required=""
+            placeholder="Message..."
+            type="text"
+            id="messageInput"
+            value={prompt}
+            onChange={(e) => setPrompt(e.target.value)}
+          />
+          <button id="sendButton" type="submit">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 664 663"
+            >
+              <path
+                fill="none"
+                d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888"
+              />
+              <path
+                strokeLinejoin="round"
+                strokeLinecap="round"
+                strokeWidth="33.67"
+                stroke="#6c6c6c"
+                d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888"
+              />
+            </svg>
+          </button>
+        </div>
       </form>
     </div>
   );

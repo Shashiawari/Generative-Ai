@@ -1,25 +1,30 @@
 body {
 
-  background-color: #4a2060;
+ 
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
 
+
+@font-face {
+  font-family: c1;
+  src: url(./fonts/CreatoDisplay-Regular.otf);
+}
+@font-face {
+  font-family: c2;
+  src: url(./fonts/CreatoDisplay-Medium.otf);
+}
+@font-face {
+  font-family: c3;
+  src: url(./fonts/CreatoDisplay-Bold.otf);
+}
 .dis {
   position: relative;
   overflow: hidden;
 }
-.svg{
-  position: absolute;
-  z-index: -99;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-}
-.mainhead {
-  text-transform: uppercase !important;
-}
+
+
 
 .preloader{
   height: 90vh;
@@ -28,15 +33,17 @@ body {
   align-items: center;
   flex-direction: column;
   text-transform: uppercase;
-  color: #EBD3F8;
+
 }
 
-.preloader h1{
+.preloader h2{
   font-size: 30px;
   margin: 0;
+  font-family: c3 !important;
 }
 
 .preloader p{
-  font-size: 30px;
+  font-size: 15px;
   margin: 0;
+  font-family: c1 !important;
 }

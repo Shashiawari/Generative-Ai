@@ -1,7 +1,7 @@
 "use client"
 import { useState, useEffect } from "react";
 import Home from "./home/page";
-
+import "./globals.css";
 export default function Page() {
   const [isLoading, setIsLoading] = useState(true);
 
